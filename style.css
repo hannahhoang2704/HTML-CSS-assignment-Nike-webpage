@@ -1,0 +1,232 @@
+body{
+  font-family: 'Merriweather', serif;
+  margin: auto;
+  width: 100%;
+  color: #3C2317;
+  background-color: #FEFFFE;
+  font-weight: 300;
+}
+h1{
+    margin: 0;
+    padding: 2rem;
+    font-weight: 700;
+}
+h3{
+    font-weight: 400;
+}
+p{
+    margin: 0;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+/*navigation bar*/
+
+.nav-container{
+    position: fixed;
+    width: 100%;
+    background-color: #FCDEC0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    position: relative;
+}
+.logo img{
+   max-width: 80%;
+   max-height: 80%;
+    margin: 2rem;
+}
+nav{
+  width: 80%;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: right;
+    padding: 2rem;
+    margin: 0;
+}
+
+.nav-btn{
+    display: block;
+    text-align: center;
+    padding: 1rem;
+}
+
+.nav-link{
+  text-decoration: none;
+  font-family: 'PT Serif', serif;
+  color: #3C2317;
+  position:relative;
+}
+.nav-link::before{                              /*underline effect*/
+  transition: 300ms;
+  height: 15px;
+  content: "";
+  position: absolute;
+  background-color: #3C2317;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 20px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
+}
+a:hover{
+    opacity: 0.75;
+}
+
+/*Home sections*/
+
+.home-container{
+  background-color: #FCDEC0;
+  text-align: center;
+  padding: 8rem 2rem;
+  line-height: 1.5;
+}
+.home-container img{
+    max-width: 90%;
+    max-height: 90%;
+}
+.company_description{
+    padding: 2rem 0;
+}
+
+/*Product section*/
+
+.product-container{
+    background-color: #E5B299;
+    padding-top: 4rem;
+}
+.product-description{
+    text-align: center;
+    padding: 4rem;
+}
+
+.product-container img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.company_description{
+    line-height: 1.7;
+    width: 70%;
+    margin: auto;
+}
+
+figure {
+    float: left;
+    margin: 0 1rem 1rem 0;
+    border: 1px black solid;
+    border-radius: 8px;
+    background-color: #FEFFFE;
+}
+figcaption{
+    padding: 1rem;
+}
+.product-list{
+    display:flex;
+    flex-wrap: wrap;
+}
+article {
+    width: calc(100%/3);
+    padding: 1.5rem;
+    box-sizing: border-box;             /*without this the width will add more padding on the size*/
+    background-color: #FCDEC0;
+}
+.product-img{
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.shoes-description{
+    text-align: left;
+    padding-left: 0.5rem;
+}
+
+
+/*Contact container*/
+
+.contact-container{
+    background-color: #E5B299;
+    margin:auto;
+    padding: 2.5rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            "heading"
+            "contact"
+            "maps"
+;
+}
+
+.contact-container h1{
+    grid-area: heading;
+    text-align: center;
+    padding: 8rem 0 4rem;
+}
+
+.footer-link{
+    text-decoration: none;
+    font-family: 'PT Serif', serif;
+    color: #3C2317;
+    padding: 2rem 2rem 2rem 0;
+    display: inline-block;
+    text-align: left;
+
+}
+.contact-map{
+    justify-content: center;
+    align-items: center;
+    grid-area: maps;
+}
+.contact-link{
+    padding: 2.5rem;
+    margin: 2rem 0;
+    grid-area: contact;
+}
+.contact-link p{
+    margin: 0;
+    padding: 0;
+}
+
+i{
+    margin: 0.5rem 0.5rem 0.5rem 0;
+}
+/*Footer*/
+footer{
+    background-color: #E5B299;
+}
+
+/*Media screen*/
+
+@media screen and (min-width: 769px){
+    body, .nav-container{
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1158px){
+    .contact-container{
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "heading heading"
+            "contact maps";
+    }
+    .contact-link, .contact-link p{text-align: left;}
+
+}
